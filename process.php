@@ -86,8 +86,24 @@ if (isset($_POST['montar'])) {
         $valorTotal += $precosTela[$tela]; // Adiciona o preço da tela
     }
 
-    // Exibe o valor total
-    echo "<h1>Resumo da Montagem</h1>";
+    // Estrutura HTML para o layout do resumo
+    echo '<!DOCTYPE html>';
+    echo '<html lang="pt-BR">';
+    echo '<head>';
+    echo '<meta charset="UTF-8">';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+    echo '<title>Resumo da Montagem</title>';
+    echo '<link rel="stylesheet" href="style.css">';
+    echo '</head>';
+    echo '<body>';
+
+    echo '<header>';
+    echo '<h1>GL Tech Imports</h1>';
+    echo '</header>';
+
+    echo '<main>';
+    echo '<section>';
+    echo '<h2>Resumo da Montagem</h2>';
     echo "<p>Tipo: " . ucfirst($tipo) . "</p>";
     echo "<p>Processador: " . $cpu . " - R$" . $precosCpu[$cpu] . "</p>";
     echo "<p>Memória: " . $memoria . " - R$" . $precosMemoria[$memoria] . "</p>";
@@ -101,6 +117,11 @@ if (isset($_POST['montar'])) {
     }
 
     echo "<h3>Valor Total: R$" . $valorTotal . "</h3>";
-}
+    echo '<h3> Desenvolvido por &copy GL Tech Systems <i>Gabriel Levi</i></h3>';
+    echo '</section>';
+    echo '</main>';
 
+    echo '</body>';
+    echo '</html>';
+}
 ?>
